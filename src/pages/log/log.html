@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Expense diary</ion-title>
+    <ion-buttons end>
+      <button ion-button outline icon-right="" value="Filter" (click)="toggleShowFilter()">
+        Filter
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="showFilter">
+    <ion-item>
+    <ion-label>Start Time</ion-label>
+    <ion-datetime displayFormat="DD.MM.YYYY" pickerFormat="DD MM YYYY" [(ngModel)]="filterFrom"></ion-datetime>
+    </ion-item>
+    <ion-item>
+    <ion-label>End Time</ion-label>
+    <ion-datetime displayFormat="DD.MM.YYYY" pickerFormat="DD MM YYYY" [(ngModel)]="filterTo"></ion-datetime>
+    </ion-item>
+    <button ion-button (click)="updateList()">Update</button>
+  </ion-card>
+
+  <ion-card *ngFor="let entry of filteredList" class="logEntry">
+  <ion-card-header>
+    <ion-item>
+      <span style="font-size: 2rem;">{{entry.dateString}}</span>
+      <ion-badge style="font-size: 2rem; border-radius: 1rem; font-weight: bold;">{{entry.amount}}€</ion-badge>
+      <button clear item-right ion-button (click)="deleteEntry(entry)">Delete</button>
+    </ion-item>
+  </ion-card-header>
+    <ion-card-content>
+      <ion-item><strong>Place:</strong> <em>{{entry.place}}</em></ion-item>
+      <ion-item><strong>Description:</strong> <em>{{entry.description}}</em></ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="filteredList.length == 0">
+    <ion-card-content style="font-weight: bold; font-size: 2rem;">
+      No entries!
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

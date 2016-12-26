@@ -1,0 +1,19 @@
+page-front {
+  ion-card {
+    min-height: 10%;
+    font-size: 2em;
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    border-radius: 1rem;
+  }
+  b {
+    margin-right: 5%;
+  }
+  .over-budget {
+    border-radius: 1em;
+    background-color: darkred !important;
+    font-weight: bold;
+  }
+}

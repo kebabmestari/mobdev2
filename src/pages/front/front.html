@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Budget status
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button large outline (click)="addNew()">
+        Add entry
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header [class.over-budget]="overDailyBudget">
+      <b>Daily budget</b>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-badge><span>{{todaySpendings}}€</span> / <span>{{dailyBudget}}€</span></ion-badge>
+      <p class="over-budget" *ngIf="overDailyBudget">OVER BUDGET BY <ion-badge>{{todaySpendings-dailyBudget}}</ion-badge></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header [class.over-budget]="overWeeklyBudget">
+      <b>Weekly budget</b>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-badge><span>{{weeklySpendings}}€</span> / <span>{{weeklyBudget}}€</span></ion-badge>
+      <p class="over-budget" *ngIf="overWeeklyBudget">OVER BUDGET BY <ion-badge>{{weeklySpendings-weeklyBudget}}</ion-badge></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header [class.over-budget]="overMonthlyBudget" >
+      <b>Monthly budget</b>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-badge><span>{{monthSpendings}}€</span> / <span>{{monthlyBudget}}€</span></ion-badge>
+      <p class="over-budget" *ngIf="overMonthlyBudget">OVER BUDGET BY <ion-badge>{{monthSpendings-monthlyBudget}}</ion-badge></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
