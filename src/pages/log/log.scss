@@ -4,4 +4,11 @@ page-log{
     border: 1px solid black;
     border-radius: 1rem;
   }
+  .logEntry {
+    transition: all 1s;
+  }
+  ion-badge {
+    margin-left: 2rem;
+  }
 }
+

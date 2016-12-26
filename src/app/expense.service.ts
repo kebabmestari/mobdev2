@@ -6,6 +6,7 @@ import {Injectable} from "@angular/core";
 import {Expense} from "./expense";
 import {Date2} from "./date";
 
+// full list of expense entries
 var listOfExpenses: Expense[] = [];
 
 @Injectable()

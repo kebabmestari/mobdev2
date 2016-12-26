@@ -5,14 +5,16 @@ import {Expense} from "../../app/expense";
 
 @Component({
   selector: 'page-log',
-  templateUrl: 'log.html',
+  templateUrl: 'log.html'
 })
 export class LogPage {
 
+  // shown list, filtered with dates and reversed so newer ones are at the top
   filteredList: Expense[] = [];
   filterFrom: string = '';
   filterTo: string = '';
 
+  // show filter dialog
   showFilter: boolean = false;
 
   constructor(public navCtrl: NavController, public expenses: ExpenseService, public modalCtrl: ModalController, public alert: ToastController) {
@@ -52,10 +54,12 @@ export class LogPage {
 
   }
 
+  // update lists upon entering
   ionViewWillEnter() {
     this.updateList();
   }
 
+  // delete an entry
   deleteEntry(e : Expense) {
     this.expenses.deleteExpense(e);
     this.updateList();

@@ -38,6 +38,7 @@ export class SettingsPage {
     this.monthly = this.daily * 30;
   }
 
+  // update inputted properties
   updateBudget() : void {
     this.budget.setMonthly(this.monthly);
     this.alert.create({

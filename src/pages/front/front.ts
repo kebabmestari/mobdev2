@@ -7,7 +7,7 @@ import {AddEntry} from "./addentry";
 
 @Component({
   selector: 'page-front',
-  templateUrl: 'front.html',
+  templateUrl: 'front.html'
 })
 export class FrontPage {
 
@@ -42,6 +42,7 @@ export class FrontPage {
     }
   }
 
+  // run all necessary updates
   update() {
     this.updateBudgets();
     this.updateSpendings();
@@ -50,18 +51,21 @@ export class FrontPage {
     this.overMonthlyBudget = this.monthSpendings > this.monthlyBudget;
   }
 
+  // update budgets
   updateBudgets() {
     this.dailyBudget = this.budget.getDaily();
     this.weeklyBudget = this.budget.getWeekly();
     this.monthlyBudget = this.budget.getMonthly();
   }
 
+  // update spendings
   updateSpendings() {
     this.todaySpendings = this.expenses.getSpendingsToday();
     this.weeklySpendings = this.expenses.getSpendingsWeek();
     this.monthSpendings = this.expenses.getSpendingsMonth();
   }
 
+  // show a dialog to add new expense entry
   addNew() {
     if(this.dailyBudget === 0 || this.monthlyBudget === 0) {
       this.alert.create({

@@ -11,9 +11,10 @@ page-front {
   b {
     margin-right: 5%;
   }
-  .over-budget {
-    border-radius: 1em;
-    background-color: darkred !important;
-    font-weight: bold;
+  p{
+    font-weight: bold !important;
+  }
+  .over-budget ion-badge {
+    background-color: red !important;
   }
 }

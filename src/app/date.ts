@@ -23,7 +23,7 @@ export class Date2 {
       this_time = this_date.getTime(),
       days_from_first_monday = Math.round(((this_time - first_monday_year_time) / day_miliseconds));
 
-    var first_monday_year = new Date(first_monday_year_time);
+    // var first_monday_year = new Date(first_monday_year_time);
 
     return (days_from_first_monday>=0 && days_from_first_monday<364) ? Math.ceil((days_from_first_monday+1)/7) : 52;
   } // from https://bitbucket.org/agustinhaller/date.getweek

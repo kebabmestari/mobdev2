@@ -13,7 +13,7 @@
     <ion-card-content>
       <ion-item>
         <ion-label>Amount</ion-label>
-        <ion-input [ngModel]="daily" (change)="updateValuesDaily($event)" type="number"></ion-input>
+        <ion-input [ngModel]="daily" min="0" (change)="updateValuesDaily($event)" type="number"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
@@ -23,7 +23,7 @@
     <ion-card-content>
       <ion-item>
         <ion-label>Amount</ion-label>
-        <ion-input [ngModel]="weekly" (change)="updateValuesWeekly($event)" type="number"></ion-input>
+        <ion-input [ngModel]="weekly" min="0" (change)="updateValuesWeekly($event)" type="number"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
@@ -33,7 +33,7 @@
     <ion-card-content>
       <ion-item>
         <ion-label>Amount</ion-label>
-        <ion-input [ngModel]="monthly" (change)="updateValuesMonthly($event)" type="number"></ion-input>
+        <ion-input [ngModel]="monthly" min="0" (change)="updateValuesMonthly($event)" type="number"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
